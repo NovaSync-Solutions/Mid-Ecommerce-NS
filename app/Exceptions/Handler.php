@@ -35,9 +35,9 @@ class Handler extends ExceptionHandler
         if($exception instanceof TokenMismatchException){ //para errores de token
             return redirect()->back()->withInput($request->input());
         }
-        if(config('app.debug')){   //si estamos en modo debug, se muestra el error
-            return parent::render($request, $exception);
-        }
-        return $this->errorResponse('Falla inesperada. Intente luego', 500);
+        // if(config('app.debug')){   //si estamos en modo debug, se muestra el error
+        //     return parent::render($request, $exception);
+        // }
+        // return $this->errorResponse('Falla inesperada. Intente luego', 500);
      }
 }
