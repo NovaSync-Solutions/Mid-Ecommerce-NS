@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User; // Import the User class
+use App\Models\Rol; // Import the Rol class
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::truncate(); // Use the User class
+        Rol::truncate(); // Use the Rol class
+        
+        $amountRol=2;
+        Rol::factory($amountRol)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory(5)->create()->each(function ($user) {
+            $user->rol()->associate(Rol::all()->random())->save();
+        });
     }
 }

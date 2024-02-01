@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Rol extends Model
 {
     use HasFactory;
-    // public $transformer = RolTransformer::class; //transformador de la clase
-     public function users()//muchos a muchos
+    public $transformer = RolTransformer::class; //transformador de la clase
+    public function users()
     {
-         return $this->belongsToMany(User::class,'rol_user');
+        return $this->belongsToMany(User::class);
     }
     
-    protected $table = 'rol';
+    
+    protected $table = 'Rol';
 
 
     public static function allRoles() //funcion para obtener todos los roles

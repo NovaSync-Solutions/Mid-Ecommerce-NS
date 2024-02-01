@@ -17,6 +17,15 @@ class UserTransformer
             'verification_token' => $user->verification_token,
             'created_at' => $user->created_at,
 
+            'links' => [
+                 
+                [
+                    'rel' => 'self',
+                    'href' => route('users.show', $user->id),
+                ],
+            
+        ]
+
         ];
     }
 
