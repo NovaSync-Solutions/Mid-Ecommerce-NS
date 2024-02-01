@@ -161,6 +161,7 @@ return [
          */
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider::class,
 
         /*
          * Application Service Providers...
