@@ -66,17 +66,17 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'ep-fragrant-hill-a5xam9jz.us-east-2.aws.neon.fl0.io?options=endpoint%3Dep-fragrant-hill-a5xam9jz'),  // Ensure endpoint ID is included
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'Ecommerce-NS'),
+            'username' => env('DB_USERNAME', 'fl0user'),
+            'password' => env('DB_PASSWORD', 'ryBH3tQu0vIl'),  // Replace with your actual password
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => 'prefer',
-        ],
+            'sslmode' => 'require',
+        ],        
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
