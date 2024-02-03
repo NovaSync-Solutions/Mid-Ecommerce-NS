@@ -42,7 +42,6 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "chmod -R 775 storage",
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [

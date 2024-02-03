@@ -5,7 +5,7 @@ use App\Models\User;
 
 class UserTransformer
 {
-    public function transform(User $user)
+    public function Transform(User $user)
     {
         return [
             'id' => $user->id,
